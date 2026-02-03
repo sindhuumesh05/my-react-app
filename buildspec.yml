@@ -3,26 +3,30 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.9
+      python: 3.9        # Change this if you use Node, Java, etc.
     commands:
-      - echo Installing dependencies...
-      - pip install -r requirements.txt
+      - echo "Installing dependencies..."
+      - pip install -r requirements.txt   # Change if your project has a different command
 
   pre_build:
     commands:
-      - echo Starting pre-build steps...
+      - echo "Starting pre-build phase..."
+      - echo "Preparing environment"
 
   build:
     commands:
-      - echo Build started on `date`
-      - python build_script.py
+      - echo "Build started on `date`"
+      - python build_script.py           # Replace with your actual build command
+      - echo "Build phase completed"
 
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo "Post-build phase completed on `date`"
+      - echo "Build successful!"
 
 artifacts:
   files:
-    - '**/*'
+    - '**/*'   # This will include all files as artifacts
+
 
 
